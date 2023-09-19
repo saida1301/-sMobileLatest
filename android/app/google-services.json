@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "521704346853",
+    "project_id": "ismobile-99990",
+    "storage_bucket": "ismobile-99990.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:521704346853:android:3f912e2d560a17de20700c",
+        "android_client_info": {
+          "package_name": "com.saidamm.isapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "521704346853-k3it090sri4ch6shk58afucaant8k6ug.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.saidamm.isapp",
+            "certificate_hash": "aa233e8ee47c9004a13b1d8643c29e07eca205b1"
+          }
+        },
+        {
+          "client_id": "521704346853-tsj7p39q3v80ntp0ept4kqc8khpcgkbf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.saidamm.isapp",
+            "certificate_hash": "9010b895fb65efe7586d287dc4c02ef31cfa814c"
+          }
+        },
+        {
+          "client_id": "521704346853-5q69jh91u849pcj588qjcjii9aod0edi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALn1gYYfXjKfFhPbrIoF0wq-34hVHx_wg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "521704346853-5q69jh91u849pcj588qjcjii9aod0edi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
