@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { borderRadius, colors, fontSizes, spacing } from './assets/themes';
 import { useTranslation } from 'react-i18next';
+import { useLikedVacancy } from './LikedVacanciesContext';
 
 const FavoritesScreen = () => {
   const navigation = useNavigation();
@@ -16,12 +17,12 @@ const FavoritesScreen = () => {
   const isDarkMode = useColorScheme() === 'dark';
   const email = useSelector((state) => state.auth.email);
   const [user_id, setUserId] = useState('');
-  const [likedVacanciesData, setLikedVacanciesData] = useState([]);
+  const [likedVacanciesDatas, setLikedVacanciesData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(8);
   
-  const totalPages = Math.ceil(likedVacanciesData.length / itemsPerPage);
+ 
 
   // Fetch user ID from AsyncStorage or API if not available
   const fetchUserId = useCallback(async () => {
@@ -89,7 +90,23 @@ const FavoritesScreen = () => {
       setIsLoading(false); // Set loading state to false once data is fetched
     }
   }, [user_id]);
-
+  const { likedVacanciesData, likeVacancy, unlikeVacancy, fetchLikedVacancyFromApi, removeLikedVacancy } = useLikedVacancy();
+  const totalPages = Math.ceil(likedVacanciesData.length / itemsPerPage);
+  useEffect(() => {
+    if (user_id) {
+      fetchLikedVacancyFromApi(user_id);
+    }
+  }, [user_id]);
+  const handleFavoritePress = async (vacancId: any) => {
+    if (likedVacanciesData.some((vacancy: { id: any; }) => vacancy.id === vacancId)) {
+      unlikeVacancy(vacancId); // Update the local likedCvData state
+      await removeLikedVacancy(user_id, vacancId); // Remove from API
+      console.log('Vacancy removed from favorites:', vacancId);
+    } else {
+    
+      console.log('Vacancy added to favorites:', vacancId);
+    }
+  }; 
   useEffect(() => {
     fetchUserId();
   }, [fetchUserId]);
@@ -139,7 +156,7 @@ const FavoritesScreen = () => {
       }
   
       // Make an API call to remove the vacancy from the server database
-      await axios.delete(`https://movieappi.onrender.com/favorites/${user_id}/${vacancyId}`);
+      await axios.delete(`https://movieappi.onrender.com/favsss/${user_id}/${vacancyId}`);
   
       console.log('Vacancy removed from favorites successfully.');
     } catch (error) {
@@ -160,7 +177,7 @@ const {t} = useTranslation();
             </Text>
           </View>
 
-          <TouchableOpacity style={styles.heartButton} onPress={() => handleRemoveFromFavorites(item.id)}>
+          <TouchableOpacity style={styles.heartButton} onPress={() => handleFavoritePress(item.id)}>
   {likedVacanciesData.some((likedVacancy) => likedVacancy.id === item.id) ? (
     <Image
       source={require('AwesomeProject/src/assets/images/heart3.png')}

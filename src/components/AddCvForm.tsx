@@ -33,6 +33,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import CustomTextInput from './CustomTextInput';
 import { borderRadius, colors, spacing } from '../assets/themes';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as RNLocalize from 'react-native-localize';
 interface PickedFile {
   fileCopyUri: null | string;
   name: string;
@@ -294,6 +295,7 @@ const AddCvForm = ({label, onPress}: any) => {
       ref.current.focus();
     }
   };
+
   const handleSubmit = async () => {
     try {
       // Check if required fields are empty
@@ -339,7 +341,7 @@ const AddCvForm = ({label, onPress}: any) => {
   
       const formData = new FormData();
       const formattedDeadline = moment(birth_date).format('YYYY-MM-DD').toString();
-  
+      const defaultLanguage = RNLocalize.getLocales()[0].languageCode;
       // Append user data to the formData
       formData.append('user_id', user_id);
       formData.append('category_id', selectedCategoryId);
@@ -351,6 +353,7 @@ const AddCvForm = ({label, onPress}: any) => {
       formData.append('name', name);
       formData.append('surname', surname);
       formData.append('father_name', father_name);
+      formData.append('defaultLanguage', defaultLanguage);
       formData.append('email', emaill);
       formData.append('position', position);
       formData.append('about_education', about_education);
@@ -400,7 +403,7 @@ const AddCvForm = ({label, onPress}: any) => {
       setabout_education('');
       setfather_name('');
       setposition('');
-  
+  console.log(formData)
       setIsSuccessModalVisible(true);
       setTimeout(() => {
         setIsSuccessModalVisible(false);
@@ -543,7 +546,7 @@ ref={positionErrorRef}
             borderRadius: 10,
             flex: 1,
             marginRight: 10,
-            backgroundColor: isDarkMode ? "#1B1523" : '#F4F9FD',
+            backgroundColor: isDarkMode ? "#1B1523" : '#FFFFFF',
             // boxShadow is not supported in React Native, so we'll use elevation for Android
             elevation: 4,
             // Additional styles to make sure the Picker is visible
@@ -570,7 +573,7 @@ ref={positionErrorRef}
             borderRadius: 10,
             flex: 1,
             marginRight: 10,
-            backgroundColor: isDarkMode ? "#1B1523" : '#F4F9FD',
+            backgroundColor: isDarkMode ? "#1B1523" : '#FFFFFF',
             // boxShadow is not supported in React Native, so we'll use elevation for Android
             elevation: 4,
             // Additional styles to make sure the Picker is visible
@@ -597,7 +600,7 @@ ref={positionErrorRef}
           style={{
             borderRadius: 10,
             flex: 1,
-            backgroundColor: isDarkMode ? "#1B1523" : '#F4F9FD',
+            backgroundColor: isDarkMode ? "#1B1523" : '#FFFFFF',
             // boxShadow is not supported in React Native, so we'll use elevation for Android
             elevation: 4,
             // Additional styles to make sure the Picker is visible
@@ -635,7 +638,7 @@ ref={positionErrorRef}
             borderRadius: 10,
             flex: 1,
             marginRight: 10,
-            backgroundColor: isDarkMode ? "#1B1523" : '#F4F9FD',
+            backgroundColor: isDarkMode ? "#1B1523" : '#FFFFFF',
             // boxShadow is not supported in React Native, so we'll use elevation for Android
             elevation: 4,
             // Additional styles to make sure the Picker is visible
@@ -662,7 +665,7 @@ ref={positionErrorRef}
             borderRadius: 10,
             flex: 1,
             marginRight: 10,
-            backgroundColor: isDarkMode ? "#1B1523" : '#F4F9FD',
+            backgroundColor: isDarkMode ? "#1B1523" : '#FFFFFF',
             // boxShadow is not supported in React Native, so we'll use elevation for Android
             elevation: 4,
             // Additional styles to make sure the Picker is visible
@@ -690,7 +693,7 @@ ref={positionErrorRef}
             borderRadius: 10,
             flex: 1,
             // Added right margin to create space between the boxes
-            backgroundColor: isDarkMode ? "#1B1523" : '#F4F9FD',
+            backgroundColor: isDarkMode ? "#1B1523" : '#FFFFFF',
             // boxShadow is not supported in React Native, so we'll use elevation for Android
             elevation: 4,
             // Additional styles to make sure the Picker is visible
@@ -1025,7 +1028,7 @@ ref={positionErrorRef}
             </Text>
 
           ) : (
-            <TouchableOpacity onPress={pickFile} style={[styles.fileButton, { backgroundColor: isDarkMode ? "#1B1523" : '#F4F9FD' },]}>
+            <TouchableOpacity onPress={pickFile} style={[styles.fileButton, { backgroundColor: isDarkMode ? "#1B1523" : '#FFFFFF' },]}>
               <Text style={{ padding: 10, alignSelf: "center", color: isDarkMode ? "white" : '#020202', }}>   {t('add')}</Text>
               <Icon
                 name="plus"

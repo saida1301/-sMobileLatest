@@ -12,7 +12,7 @@ import HTMLrender from "react-native-render-html"
 const ContactScreen = () => {
   const isDarkMode = useColorScheme() === 'dark';
   const {t} = useTranslation();
-  
+  const contact5HTML = t('contact5');
   return (
     <ScrollView style={{  marginBottom:60, }}>
 
@@ -156,8 +156,11 @@ const ContactScreen = () => {
   {'\n'}
   <Text>{t('contact4')}</Text>
   {'\n'}
-
-    <HTMLrender source={{ html: t('contact5') }} />
+  <HTMLrender
+      source={{
+        html: contact5HTML.replace(/\n/g, '<br />'),
+      }}
+    />
 
 </Text>
 

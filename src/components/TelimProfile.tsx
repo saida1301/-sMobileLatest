@@ -35,7 +35,7 @@ const {t} = useTranslation();
            onPress={() => handlePress(1)}
           style={[
             styles.card,
-            {backgroundColor: isDarkMode ? "#1B1523" : '#F4F9FD'},
+            {backgroundColor: isDarkMode ? "#1B1523" : '#FFFFFF'},
             profileButton === 1 ? styles.activeCard : styles.card,
           ]}
         >
@@ -53,7 +53,7 @@ const {t} = useTranslation();
           onPress={() => handlePress(2)}
           style={[
             styles.card,
-            {backgroundColor: isDarkMode ? "#1B1523" : '#F4F9FD'},
+            {backgroundColor: isDarkMode ? "#1B1523" : '#FFFFFF'},
  profileButton === 2 ? styles.activeCard : styles.card,
           ]}
         >
@@ -82,65 +82,62 @@ export default TelimProfile;
 
 const styles = StyleSheet.create({
   card: {
-    width: '100%',
+    width: '90%', // Adjusted width to be 90% of the screen width
     maxWidth: 300,
     height: 60,
     borderRadius: 10,
-
-    marginTop:10,
+    marginTop: 10,
     shadowColor: '#000',
-    shadowOffset: {width: 0, height: 2},
+    shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
-    flexDirection: 'row', // Use flexDirection: 'row' to place image and text side by side
-    alignItems: 'center', // Use alignItems: 'center' to center items vertically
+    flexDirection: 'row',
+    alignItems: 'center',
     justifyContent: 'center',
   },
-  activeCard:{
-    width:"100%",
-    maxWidth:300,
-    height:60,
-    borderRadius:10,
-    backgroundColor:"#9559E5"
-
+  activeCard: {
+    width: '90%', // Adjusted width to be 90% of the screen width
+    maxWidth: 300,
+    height: 60,
+    borderRadius: 10,
+    backgroundColor: '#9559E5',
   },
   containerBox: {
-    flexDirection:"column",
-    alignItems:"center",
-    marginHorizontal:20,
-    marginVertical:20,
-    columnGap:20,
-    width:"100%",
-    maxWidth:370,
-    height:195,
-    justifyContent:"center",
-    borderRadius:10,
+    flexDirection: 'column',
+    alignItems: 'center',
+    marginHorizontal: 20,
+    marginVertical: 20,
+    columnGap: 20,
+    width: '90%', // Adjusted width to be 90% of the screen width
+    maxWidth: 370,
+    height: 195,
+    justifyContent: 'center',
+    borderRadius: 10,
     shadowColor: '#000',
-    shadowOffset: {width: 0, height: 2},
+    shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
   },
-  text:{
-    color: "#9559E5",
-    fontSize:14,
-    fontWeight:"600",
-    textAlign:"center",
-    alignSelf:"center",
-    alignItems:"center",
-    justifyContent:"center",
-    margin: 20
+  text: {
+    color: '#9559E5',
+    fontSize: 14,
+    fontWeight: '600',
+    textAlign: 'center',
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 20,
   },
-  activeText:{
-    color: "white",
-    fontSize:14,
-    fontWeight:"600",
-    textAlign:"center",
-    alignSelf:"center",
-    alignItems:"center",
-    justifyContent:"center",
-    margin: 20
-   
+  activeText: {
+    color: 'white',
+    fontSize: 14,
+    fontWeight: '600',
+    textAlign: 'center',
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 20,
   }
 });

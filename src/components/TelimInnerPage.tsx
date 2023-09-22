@@ -164,7 +164,7 @@ const {t} = useTranslation()
             <View style={{width:"100%",maxWidth:370, height:70, backgroundColor:isDarkMode ? "black" : "white",}}>
          <Text style={[styles.text, {color: isDarkMode ? "white" : "black"}]}>{t('telimat')}</Text>
          </View>
-          <View style={[styles.container2, {backgroundColor: isDarkMode ? "black" : "white"}]}>
+          <View style={[styles.container2, {backgroundColor: isDarkMode ? "black" : "white", }]}>
        
             {data && (
               <View>
@@ -194,10 +194,12 @@ const {t} = useTranslation()
               </View>
             )}
           </View>
-          <View style={{width:"100%",maxWidth:370, height:70, backgroundColor:isDarkMode ? "black" : "white", marginTop:20, marginBottom:"50%"}}>
-         <Text style={[styles.text, {color: isDarkMode ? "white" : "black"}]}>Oxsar Telimler</Text>
-         </View>
-      <SimilarTrainings similarTrainings={similarTrainings} />
+          {similarTrainings.length > 0 ? (
+          <><View style={{ width: "100%", maxWidth: 370, height: 70, backgroundColor: isDarkMode ? "black" : "white", marginTop: 20, marginBottom: "50%" }}>
+              <Text style={[styles.text, { color: isDarkMode ? "white" : "black" }]}>{t('oxsar_telim')}</Text>
+            </View><SimilarTrainings similarTrainings={similarTrainings} /></>
+) : null}
+
         </View>
 
       </ScrollView>
@@ -211,6 +213,7 @@ export default TelimInnerPage;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginBottom:40
   },
   contentContainer: {
     backgroundColor: '#F4F9FD',

@@ -27,6 +27,7 @@ import { useSelector } from 'react-redux';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import DocumentPicker from 'react-native-document-picker';
 import LoadingScreen from './LoadingScreen';
+import * as RNLocalize from 'react-native-localize';
 const VacanCIesInner = ({route, selectedCity}: any) => {
   const isDarkMode = useColorScheme() === 'dark';
   const date = moment().format('MMM DD YY');
@@ -240,7 +241,9 @@ console.log(response.data)
   const handleSubmit = async ({ name, email, surname, phone, file, cvId }: any) => {
     try {
       const formData = new FormData();
+      const defaultLanguage = RNLocalize.getLocales()[0].languageCode;
       formData.append('vacancyId', vacancyId);
+      formData.append('defaultLanguage', defaultLanguage);
       formData.append('userId', userId);
       formData.append('name', name);
       formData.append('email', email);

@@ -284,7 +284,7 @@ placeholderTextColor={isDarkMode ? "#FDFDFD" : "gray"}
 <Picker
   style={[
     styles.dropdown,
-    { backgroundColor: isDarkMode  ? "#1B1523" : '#F4F9FD' },
+    { backgroundColor: isDarkMode  ? "#1B1523" : '#FFFFFF' },
   ]}
   dropdownIconColor={isDarkMode ? 'white' : 'black'}
   selectedValue={value}
@@ -422,7 +422,7 @@ placeholderTextColor={isDarkMode ? "#FDFDFD" : "gray"}
 
 
         <Text style={[styles.text, {color: isDarkMode  ? "white" : '#020202'}]}>{t('sekiladd')}</Text>
-        <Pressable onPress={handleImagePicker} style={[styles.input,    {backgroundColor: isDarkMode  ? "#1B1523" : '#F4F9FD'},]} ref={imageInputRef}>
+        <Pressable onPress={handleImagePicker} style={[styles.input,    {backgroundColor: isDarkMode  ? "#1B1523" : '#FFFFFF'},]} ref={imageInputRef}>
           <Icon
             name="paperclip"
             size={24}
@@ -440,7 +440,7 @@ placeholderTextColor={isDarkMode ? "#FDFDFD" : "gray"}
   style={[
     styles.button2,
     {
-      backgroundColor: isDarkMode  ? 'white' : '#F4F9FD',
+      backgroundColor: isDarkMode  ? 'white' : '#FFFFFF',
     },
   ]}
   onPress={handleAddCompany}

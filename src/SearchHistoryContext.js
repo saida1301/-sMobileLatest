@@ -3,10 +3,6 @@ import React, { createContext, useContext, useState } from 'react';
 
 const SearchHistoryContext = createContext();
 
-export const useSearchHistory = () => {
-  return useContext(SearchHistoryContext);
-};
-
 export const SearchHistoryProvider = ({ children }) => {
   const [searchHistory, setSearchHistory] = useState([]);
 
@@ -28,4 +24,12 @@ export const SearchHistoryProvider = ({ children }) => {
       {children}
     </SearchHistoryContext.Provider>
   );
+};
+
+export const useSearchHistory = () => {
+  const context = useContext(SearchHistoryContext);
+  if (!context) {
+    throw new Error('useSearchHistory must be used within a SearchHistoryProvider');
+  }
+  return context;
 };

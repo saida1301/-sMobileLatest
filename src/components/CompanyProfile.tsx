@@ -49,7 +49,7 @@ const {t} = useTranslation();
           onPress={() => handlePress(1)}
           style={[
             styles.card,
-           { backgroundColor: isDarkMode ? "#1B1523" : '#F4F9FD'},
+           { backgroundColor: isDarkMode ? "#1B1523" : '#FFFFFF'},
             profileButton === 1 ? styles.activeCard : styles.card,
           ]}
         >
@@ -66,7 +66,7 @@ const {t} = useTranslation();
           onPress={() => handlePress(2)}
           style={[
             styles.card,
-            { backgroundColor: isDarkMode ? "#1B1523" : '#F4F9FD'},
+            { backgroundColor: isDarkMode ? "#1B1523" : '#FFFFFF'},
             profileButton === 2 ? styles.activeCard : styles.card,
           ]}
         >
@@ -83,7 +83,7 @@ const {t} = useTranslation();
           onPress={() => handlePress(3)}
           style={[
             styles.card,
-            { backgroundColor: isDarkMode ? "#1B1523" : '#F4F9FD'},
+            { backgroundColor: isDarkMode ? "#1B1523" : '#FFFFFF'},
             profileButton === 3 ? styles.activeCard : styles.card,
           ]}
         >
@@ -103,7 +103,7 @@ const {t} = useTranslation();
           }}
           style={[
             styles.card,
-            { backgroundColor: isDarkMode ? "#1B1523" : '#F4F9FD'},
+            { backgroundColor: isDarkMode ? "#1B1523" : '#FFFFFF'},
             profileButton === 4 ? styles.activeCard : styles.card,
           ]}
         >
@@ -123,7 +123,7 @@ const {t} = useTranslation();
           }}
           style={[
             styles.card,
-            { backgroundColor: isDarkMode ? "#1B1523" : '#F4F9FD'},
+            { backgroundColor: isDarkMode ? "#1B1523" : '#FFFFFF'},
             profileButton === 5 ? styles.activeCard : styles.card,
           ]}
         >

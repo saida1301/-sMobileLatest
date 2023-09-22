@@ -250,31 +250,32 @@ const paddingVertical = screenHeight < 600 ? 10 : 20; // Adjust as needed
           <View
     style={{
       backgroundColor: isDarkMode ? '#0D0D0D' : '#FDFDFD',
-      // Add shadow styles based on the isDarkMode value
       shadowColor: isDarkMode ? '#FFF' : '#000',
       shadowOffset: { width: 0, height: 2 },
       shadowOpacity: isDarkMode ? 0.8 : 0.3,
       shadowRadius: isDarkMode ? 4 : 2,
       elevation: isDarkMode ? 5 : 2,
-
-      // Elevation is for Android shadow
-      width: screenWidth * 0.48,
-      height: screenHeight * 0.172,
+      width: screenWidth * 0.49,
+      height:150, // Set a fixed height of 200 pixels
+      // Using a percentage of the screen height
       marginLeft: screenWidth * 0.02,
       marginBottom: screenHeight * 0.03,
-
       borderRadius: 8,
-      paddingVertical: 6,
+      paddingVertical: screenHeight * 0.015, // Adjust padding based on screen height
+      
     }}
   >
-     <Text
+<Text
   style={[
     styles.about,
     {color: isDarkMode ? '#FDFDFD' : '#0D0D0D'},
   ]}
+  numberOfLines={2}  // Set the number of lines to display
+  ellipsizeMode="tail" // Add an ellipsis (...) at the end if the text is truncated
 >
-  {salam?.length > 50 ? salam?.substring(0, 50) + '...' : salam}
+  {salam}
 </Text>
+
 
             <View style={{alignSelf: 'center', padding: 8, marginTop: 20}}>
               <Pressable
@@ -307,7 +308,7 @@ const paddingVertical = screenHeight < 600 ? 10 : 20; // Adjust as needed
       shadowRadius: isDarkMode ? 4 : 2,
       elevation: isDarkMode ? 5 : 2,
       width: screenWidth * 0.88,
-      height: screenHeight * 0.15,
+      height: 120,
       marginLeft: screenWidth * 0.05,
       marginBottom: screenHeight * 0.01,
 
@@ -389,7 +390,7 @@ const paddingVertical = screenHeight < 600 ? 10 : 20; // Adjust as needed
         shadowRadius: isDarkMode ? 4 : 2,
         elevation: isDarkMode ? 5 : 2,
         width: screenWidth * 0.5,
-        height: screenHeight * 0.115,
+        height:90,
 
         marginBottom: screenHeight * 0.01,
         // Elevation is for Android shadow
@@ -432,7 +433,7 @@ const paddingVertical = screenHeight < 600 ? 10 : 20; // Adjust as needed
         shadowRadius: isDarkMode ? 4 : 2,
         elevation: isDarkMode ? 5 : 2,
         width: screenWidth * 0.5,
-        height: screenHeight * 0.115,
+        height: 90,
         marginLeft: screenWidth * 0.02,
         marginBottom: screenHeight * 0.01,
 
@@ -890,7 +891,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.05,
     shadowRadius:  Dimensions.get('window').width * 0.02,
     elevation: 2,
-    height:  Dimensions.get('window').height * 0.2,
+    height:  150,
   },
   categoryContainer: {
     flexDirection: 'row',

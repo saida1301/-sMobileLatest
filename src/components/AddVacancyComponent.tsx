@@ -14,6 +14,7 @@ import { borderRadius, colors, spacing } from '../assets/themes';
 import SuccessAnimation from '../animations/success.json';
 import LottieView from 'lottie-react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as RNLocalize from 'react-native-localize';
 const AddVacancyComponent = ({label}:any) => {
   const [company_id, setCompany_id] = useState('');
   const [city_id, setCity_id] = useState('');
@@ -245,6 +246,7 @@ const AddVacancyComponent = ({label}:any) => {
         return;
       }
       const formattedDeadline = moment(deadline).format('YYYY-MM-DD').toString();
+      const defaultLanguage = RNLocalize.getLocales()[0].languageCode;
       const vacancyData = {
         user_id: user_id,
         selected_company_id :company_id,
@@ -259,6 +261,7 @@ const AddVacancyComponent = ({label}:any) => {
         max_age,
         requirement,
         description,
+        defaultLanguage,
         contact_name,
         accept_type,
         job_type_id : type_id,

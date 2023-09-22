@@ -48,6 +48,7 @@ const {t} = useTranslation()
         screenOptions={{
           headerShown: false,
           tabBarActiveTintColor: '#fff',
+          tabBarHideOnKeyboard: true,
           tabBarStyle: {
             position: 'absolute',
             height: 60,

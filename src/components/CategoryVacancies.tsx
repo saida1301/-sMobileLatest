@@ -233,7 +233,7 @@ const [categoryvacancy, setcategoryvacancy] = useState([])
           style={[
             styles.card,
             {
-              backgroundColor: isDarkMode ? '#0D0D0D' : '#FDFDFD',
+              backgroundColor: isDarkMode ? '#0D0D0D' : '#FFFFFF',
               shadowColor: isDarkMode ? '#FFF' : '#000',
               shadowOffset: { width: 0, height: 2 },
               shadowOpacity: isDarkMode ? 0.5 : 0.2, // Adjust these values

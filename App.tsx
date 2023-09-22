@@ -18,6 +18,7 @@ import { LikedVacancyProvider } from './src/LikedVacanciesContext';
 import { FavoriteProvider } from './src/FavoriteContext';
 import { LikedCvProvider } from './src/LikedCvContex';
 import withInternetCheck from './src/withInternetCheck';
+import { SearchHistoryProvider } from './src/SearchHistoryContext';
 LogBox.ignoreLogs(['Warning: ...']);
 LogBox.ignoreAllLogs();
 
@@ -62,6 +63,7 @@ const App = ({ isConnected }: any) => {
     <Provider store={store}>
       <I18nextProvider i18n={i18next}>
         <GestureHandlerRootView style={{ flex: 1 }}>
+          <SearchHistoryProvider>
           <LikedCvProvider>
             <LikedVacancyProvider>
               <NavigationContainer>
@@ -86,6 +88,7 @@ const App = ({ isConnected }: any) => {
               </Modal>
             </LikedVacancyProvider>
           </LikedCvProvider>
+          </SearchHistoryProvider>
         </GestureHandlerRootView>
       </I18nextProvider>
     </Provider>
