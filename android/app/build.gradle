@@ -80,8 +80,8 @@ android {
         applicationId "com.saidamm.isapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-         versionCode 94
-        versionName "1.0.50"
+         versionCode 95
+        versionName "1.0.51"
 
 
     }

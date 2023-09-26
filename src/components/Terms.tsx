@@ -17,7 +17,7 @@ const Terms = () => {
           <View style={{ marginHorizontal: 20 }}>
             <View
               style={{
-                backgroundColor: isDarkMode  ? "#0d0d0d" :  "#E5EAFE",
+                backgroundColor: isDarkMode  ? "#E5EAFE" :  "#E5EAFE",
                 columnGap: 20,
                 marginTop: 20,
                 padding: 20

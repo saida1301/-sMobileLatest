@@ -220,19 +220,29 @@ const isDarkMode = useColorScheme() === 'dark'
 
       <View style={styles.formContainer}>
       <TextInput
-            onChangeText={handleChangeUsername}
-            placeholder={t('email')}
-            style={[styles.input, { width: inputWidth ,borderColor: isDarkMode ? "white" : "black"}]} // Use the calculated width for the input
-            placeholderTextColor={isDarkMode ? "white" : "black"}
-            keyboardType="email-address"
-          />
-          <TextInput
-            secureTextEntry={!showPassword}
-            onChangeText={handleChangePassword}
-            placeholder={t('sifre')}
-            style={[styles.input, { width: inputWidth ,borderColor: isDarkMode ? "white" : "black"}]} // Use the calculated width for the input
-            placeholderTextColor={isDarkMode ? "white" : "black"}
-          />
+  onChangeText={handleChangeUsername}
+  placeholder={t('email')}
+  style={[
+    styles.input,
+    { width: inputWidth, borderColor: isDarkMode ? "white" : "black" },
+    { color: isDarkMode ? "white" : "black" } // Add this line
+  ]}
+  placeholderTextColor={isDarkMode ? "white" : "black"}
+  keyboardType="email-address"
+/>
+
+<TextInput
+  secureTextEntry={!showPassword}
+  onChangeText={handleChangePassword}
+  placeholder={t('sifre')}
+  style={[
+    styles.input,
+    { width: inputWidth, borderColor: isDarkMode ? "white" : "black" },
+    { color: isDarkMode ? "white" : "black" } // Add this line
+  ]}
+  placeholderTextColor={isDarkMode ? "white" : "black"}
+/>
+
 
 
 <TouchableOpacity onPress={togglePasswordVisibility} style={styles.eyeIconContainer}>
